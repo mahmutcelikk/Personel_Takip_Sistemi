@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personel_Takip_Sistemi", "Personel_Takip_Sistemi\Personel_Takip_Sistemi.csproj", "{6101BC05-C8E0-4DCC-B9E1-ED1FAF59DC5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{522FAC5D-AF06-4D13-A48F-7203CF23DF9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9625759D-9AFF-41CB-ACDB-8CD1A1B12582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6101BC05-C8E0-4DCC-B9E1-ED1FAF59DC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6101BC05-C8E0-4DCC-B9E1-ED1FAF59DC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6101BC05-C8E0-4DCC-B9E1-ED1FAF59DC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522FAC5D-AF06-4D13-A48F-7203CF23DF9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522FAC5D-AF06-4D13-A48F-7203CF23DF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522FAC5D-AF06-4D13-A48F-7203CF23DF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522FAC5D-AF06-4D13-A48F-7203CF23DF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9625759D-9AFF-41CB-ACDB-8CD1A1B12582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9625759D-9AFF-41CB-ACDB-8CD1A1B12582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9625759D-9AFF-41CB-ACDB-8CD1A1B12582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9625759D-9AFF-41CB-ACDB-8CD1A1B12582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
