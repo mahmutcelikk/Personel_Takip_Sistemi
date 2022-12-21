@@ -104,6 +104,7 @@ namespace Personel_Takip_Sistemi
             this.btnDepartman.Text = "Departman İşlemleri";
             this.btnDepartman.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDepartman.UseVisualStyleBackColor = false;
+            this.btnDepartman.Click += new System.EventHandler(this.btnDepartman_Click);
             // 
             // btnPozisyon
             // 
@@ -162,6 +163,7 @@ namespace Personel_Takip_Sistemi
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Takip";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 
         }

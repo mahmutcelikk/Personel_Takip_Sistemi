@@ -55,6 +55,7 @@ namespace Personel_Takip_Sistemi
             this.txtUserNo.Name = "txtUserNo";
             this.txtUserNo.Size = new System.Drawing.Size(182, 30);
             this.txtUserNo.TabIndex = 0;
+            this.txtUserNo.TextChanged += new System.EventHandler(this.txtUserNo_TextChanged);
             this.txtUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNo_KeyPress);
             // 
             // lblPassword

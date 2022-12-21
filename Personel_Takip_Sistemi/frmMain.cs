@@ -26,5 +26,17 @@ namespace Personel_Takip_Sistemi
         {
             Application.Exit();
         }
+
+        private void btnDepartman_Click(object sender, EventArgs e)
+        {
+            frmDepartmentListesi frm = new frmDepartmentListesi();
+            this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -52,19 +52,127 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDepartmanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepartmanEkle.Designer.cs">
+      <DependentUpon>frmDepartmanEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIsBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIsBilgileri.Designer.cs">
+      <DependentUpon>frmIsBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIsler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIsler.Designer.cs">
+      <DependentUpon>frmIsler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIzinBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzinBilgileri.Designer.cs">
+      <DependentUpon>frmIzinBilgileri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIzinIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzinIslemleri.Designer.cs">
+      <DependentUpon>frmIzinIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaas.Designer.cs">
+      <DependentUpon>frmMaas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaasListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaasListesi.Designer.cs">
+      <DependentUpon>frmMaasListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonelEkle.Designer.cs">
+      <DependentUpon>frmPersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonelIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonelIslemleri.Designer.cs">
+      <DependentUpon>frmPersonelIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPozisyonEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPozisyonEkle.Designer.cs">
+      <DependentUpon>frmPozisyonEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPozisyonIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPozisyonIslemleri.Designer.cs">
+      <DependentUpon>frmPozisyonIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDepartmanEkle.resx">
+      <DependentUpon>frmDepartmanEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIsBilgileri.resx">
+      <DependentUpon>frmIsBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIsler.resx">
+      <DependentUpon>frmIsler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzinBilgileri.resx">
+      <DependentUpon>frmIzinBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzinIslemleri.resx">
+      <DependentUpon>frmIzinIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaas.resx">
+      <DependentUpon>frmMaas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaasListesi.resx">
+      <DependentUpon>frmMaasListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonelEkle.resx">
+      <DependentUpon>frmPersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonelIslemleri.resx">
+      <DependentUpon>frmPersonelIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPozisyonEkle.resx">
+      <DependentUpon>frmPozisyonEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPozisyonIslemleri.resx">
+      <DependentUpon>frmPozisyonIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

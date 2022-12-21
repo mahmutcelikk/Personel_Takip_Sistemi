@@ -52,5 +52,10 @@ namespace Personel_Takip_Sistemi
         {
             txtPassword.PasswordChar = '*';
         }
+
+        private void txtUserNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
