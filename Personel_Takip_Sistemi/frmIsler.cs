@@ -34,5 +34,21 @@ namespace Personel_Takip_Sistemi
         {
 
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            frmIsBilgileri frm = new frmIsBilgileri();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            frmIsBilgileri frm = new frmIsBilgileri();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

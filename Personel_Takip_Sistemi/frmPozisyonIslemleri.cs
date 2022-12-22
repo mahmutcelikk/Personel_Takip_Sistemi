@@ -21,5 +21,21 @@ namespace Personel_Takip_Sistemi
         {
             this.Close();
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            frmPozisyonEkle frm = new frmPozisyonEkle();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            frmPozisyonEkle frm = new frmPozisyonEkle();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -44,5 +44,21 @@ namespace Personel_Takip_Sistemi
                 e.Handled = true;
             }
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            frmPersonelEkle frm = new frmPersonelEkle();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            frmIzinIslemleri frm = new frmIzinIslemleri();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

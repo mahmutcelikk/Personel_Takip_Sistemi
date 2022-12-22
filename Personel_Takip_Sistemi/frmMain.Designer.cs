@@ -65,6 +65,7 @@ namespace Personel_Takip_Sistemi
             this.btnisler.Text = "İşler";
             this.btnisler.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnisler.UseVisualStyleBackColor = false;
+            this.btnisler.Click += new System.EventHandler(this.btnisler_Click);
             // 
             // btnMaas
             // 
@@ -78,6 +79,7 @@ namespace Personel_Takip_Sistemi
             this.btnMaas.Text = "Maaş";
             this.btnMaas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMaas.UseVisualStyleBackColor = false;
+            this.btnMaas.Click += new System.EventHandler(this.btnMaas_Click);
             // 
             // btnIzin
             // 
@@ -91,6 +93,7 @@ namespace Personel_Takip_Sistemi
             this.btnIzin.Text = "İzin İşlemleri";
             this.btnIzin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIzin.UseVisualStyleBackColor = false;
+            this.btnIzin.Click += new System.EventHandler(this.btnIzin_Click);
             // 
             // btnDepartman
             // 
@@ -118,6 +121,7 @@ namespace Personel_Takip_Sistemi
             this.btnPozisyon.Text = "Pozisyon İşlemleri";
             this.btnPozisyon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPozisyon.UseVisualStyleBackColor = false;
+            this.btnPozisyon.Click += new System.EventHandler(this.btnPozisyon_Click);
             // 
             // btnLogout
             // 
@@ -131,6 +135,7 @@ namespace Personel_Takip_Sistemi
             this.btnLogout.Text = "Log Out";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnExit
             // 
@@ -163,6 +168,7 @@ namespace Personel_Takip_Sistemi
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Takip";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 

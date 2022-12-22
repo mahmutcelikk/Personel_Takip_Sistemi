@@ -47,18 +47,18 @@ namespace Personel_Takip_Sistemi
             this.btnEkle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTemizle = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbKucuk = new System.Windows.Forms.RadioButton();
-            this.rbBuyuk = new System.Windows.Forms.RadioButton();
-            this.btnAra = new System.Windows.Forms.Button();
             this.lblMaas = new System.Windows.Forms.Label();
-            this.txtMaas = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMaas = new System.Windows.Forms.TextBox();
             this.lblMaasYil = new System.Windows.Forms.Label();
             this.cbMaasAy = new System.Windows.Forms.ComboBox();
             this.lblIsDurum = new System.Windows.Forms.Label();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbEsit = new System.Windows.Forms.RadioButton();
+            this.rbKucuk = new System.Windows.Forms.RadioButton();
+            this.rbBuyuk = new System.Windows.Forms.RadioButton();
+            this.btnAra = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -223,6 +223,7 @@ namespace Personel_Takip_Sistemi
             this.btnGuncelle.TabIndex = 1;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -234,6 +235,7 @@ namespace Personel_Takip_Sistemi
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // dataGridView1
             // 
@@ -264,6 +266,63 @@ namespace Personel_Takip_Sistemi
             this.panel1.Size = new System.Drawing.Size(1068, 253);
             this.panel1.TabIndex = 1;
             // 
+            // lblMaas
+            // 
+            this.lblMaas.AutoSize = true;
+            this.lblMaas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMaas.Location = new System.Drawing.Point(440, 108);
+            this.lblMaas.Name = "lblMaas";
+            this.lblMaas.Size = new System.Drawing.Size(65, 25);
+            this.lblMaas.TabIndex = 32;
+            this.lblMaas.Text = "Maaş";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox4.Location = new System.Drawing.Point(555, 17);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(181, 30);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            // 
+            // txtMaas
+            // 
+            this.txtMaas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMaas.Location = new System.Drawing.Point(555, 108);
+            this.txtMaas.Name = "txtMaas";
+            this.txtMaas.Size = new System.Drawing.Size(181, 30);
+            this.txtMaas.TabIndex = 3;
+            this.txtMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaas_KeyPress);
+            // 
+            // lblMaasYil
+            // 
+            this.lblMaasYil.AutoSize = true;
+            this.lblMaasYil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMaasYil.Location = new System.Drawing.Point(440, 17);
+            this.lblMaasYil.Name = "lblMaasYil";
+            this.lblMaasYil.Size = new System.Drawing.Size(95, 25);
+            this.lblMaasYil.TabIndex = 33;
+            this.lblMaasYil.Text = "Maaş Yıl";
+            // 
+            // cbMaasAy
+            // 
+            this.cbMaasAy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbMaasAy.FormattingEnabled = true;
+            this.cbMaasAy.Location = new System.Drawing.Point(555, 61);
+            this.cbMaasAy.Name = "cbMaasAy";
+            this.cbMaasAy.Size = new System.Drawing.Size(181, 33);
+            this.cbMaasAy.TabIndex = 2;
+            // 
+            // lblIsDurum
+            // 
+            this.lblIsDurum.AutoSize = true;
+            this.lblIsDurum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblIsDurum.Location = new System.Drawing.Point(440, 61);
+            this.lblIsDurum.Name = "lblIsDurum";
+            this.lblIsDurum.Size = new System.Drawing.Size(97, 25);
+            this.lblIsDurum.TabIndex = 31;
+            this.lblIsDurum.Text = "Maaş Ay";
+            // 
             // btnTemizle
             // 
             this.btnTemizle.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -285,6 +344,18 @@ namespace Personel_Takip_Sistemi
             this.groupBox1.Size = new System.Drawing.Size(277, 57);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // rbEsit
+            // 
+            this.rbEsit.AutoSize = true;
+            this.rbEsit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbEsit.Location = new System.Drawing.Point(196, 11);
+            this.rbEsit.Name = "rbEsit";
+            this.rbEsit.Size = new System.Drawing.Size(63, 24);
+            this.rbEsit.TabIndex = 2;
+            this.rbEsit.TabStop = true;
+            this.rbEsit.Text = "Eşit";
+            this.rbEsit.UseVisualStyleBackColor = true;
             // 
             // rbKucuk
             // 
@@ -322,75 +393,6 @@ namespace Personel_Takip_Sistemi
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = false;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // lblMaas
-            // 
-            this.lblMaas.AutoSize = true;
-            this.lblMaas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMaas.Location = new System.Drawing.Point(440, 108);
-            this.lblMaas.Name = "lblMaas";
-            this.lblMaas.Size = new System.Drawing.Size(65, 25);
-            this.lblMaas.TabIndex = 32;
-            this.lblMaas.Text = "Maaş";
-            // 
-            // txtMaas
-            // 
-            this.txtMaas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMaas.Location = new System.Drawing.Point(555, 108);
-            this.txtMaas.Name = "txtMaas";
-            this.txtMaas.Size = new System.Drawing.Size(181, 30);
-            this.txtMaas.TabIndex = 3;
-            this.txtMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaas_KeyPress);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(555, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 30);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
-            // 
-            // lblMaasYil
-            // 
-            this.lblMaasYil.AutoSize = true;
-            this.lblMaasYil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMaasYil.Location = new System.Drawing.Point(440, 17);
-            this.lblMaasYil.Name = "lblMaasYil";
-            this.lblMaasYil.Size = new System.Drawing.Size(95, 25);
-            this.lblMaasYil.TabIndex = 33;
-            this.lblMaasYil.Text = "Maaş Yıl";
-            // 
-            // cbMaasAy
-            // 
-            this.cbMaasAy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbMaasAy.FormattingEnabled = true;
-            this.cbMaasAy.Location = new System.Drawing.Point(555, 61);
-            this.cbMaasAy.Name = "cbMaasAy";
-            this.cbMaasAy.Size = new System.Drawing.Size(181, 33);
-            this.cbMaasAy.TabIndex = 2;
-            // 
-            // lblIsDurum
-            // 
-            this.lblIsDurum.AutoSize = true;
-            this.lblIsDurum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblIsDurum.Location = new System.Drawing.Point(440, 61);
-            this.lblIsDurum.Name = "lblIsDurum";
-            this.lblIsDurum.Size = new System.Drawing.Size(97, 25);
-            this.lblIsDurum.TabIndex = 31;
-            this.lblIsDurum.Text = "Maaş Ay";
-            // 
-            // rbEsit
-            // 
-            this.rbEsit.AutoSize = true;
-            this.rbEsit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbEsit.Location = new System.Drawing.Point(196, 11);
-            this.rbEsit.Name = "rbEsit";
-            this.rbEsit.Size = new System.Drawing.Size(63, 24);
-            this.rbEsit.TabIndex = 2;
-            this.rbEsit.TabStop = true;
-            this.rbEsit.Text = "Eşit";
-            this.rbEsit.UseVisualStyleBackColor = true;
             // 
             // frmMaasListesi
             // 

@@ -26,13 +26,23 @@ namespace Personel_Takip_Sistemi
         private void btnEkle_Click(object sender, EventArgs e)
         {
             frmDepartmanEkle frm = new frmDepartmanEkle();
+            this.Hide();
             frm.ShowDialog();
+            this.Visible = true;
 
         }
 
         private void frmDepartmentListesi_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            frmDepartmanEkle frm = new frmDepartmanEkle();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
         }
     }
 }

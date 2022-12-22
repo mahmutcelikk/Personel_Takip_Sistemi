@@ -44,8 +44,8 @@ namespace Personel_Takip_Sistemi
         private void btnGiris_Click(object sender, EventArgs e)
         {
             frmMain frm = new frmMain();
-            this.Visible = false;
-            frm.Show();
+            this.Hide();
+            frm.ShowDialog();
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

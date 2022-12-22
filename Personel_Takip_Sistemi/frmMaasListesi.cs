@@ -50,5 +50,21 @@ namespace Personel_Takip_Sistemi
                 e.Handled = true;
             }
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            frmMaas frm = new frmMaas();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            frmMaas frm = new frmMaas();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
