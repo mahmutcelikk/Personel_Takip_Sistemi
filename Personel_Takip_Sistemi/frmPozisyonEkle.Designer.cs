@@ -96,6 +96,7 @@ namespace Personel_Takip_Sistemi
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmPozisyonEkle
             // 
@@ -109,7 +110,9 @@ namespace Personel_Takip_Sistemi
             this.Controls.Add(this.txtPozAdi);
             this.Controls.Add(this.lblPozAdi);
             this.Name = "frmPozisyonEkle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPozisyonEkle";
+            this.Load += new System.EventHandler(this.frmPozisyonEkle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,7 +30,7 @@ namespace Personel_Takip_Sistemi
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDepartmanAd = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnKapat = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,13 +45,13 @@ namespace Personel_Takip_Sistemi
             this.label1.TabIndex = 0;
             this.label1.Text = "Departman Adları";
             // 
-            // textBox1
+            // txtDepartmanAd
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(307, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 30);
-            this.textBox1.TabIndex = 0;
+            this.txtDepartmanAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtDepartmanAd.Location = new System.Drawing.Point(307, 50);
+            this.txtDepartmanAd.Name = "txtDepartmanAd";
+            this.txtDepartmanAd.Size = new System.Drawing.Size(181, 30);
+            this.txtDepartmanAd.TabIndex = 0;
             // 
             // btnKaydet
             // 
@@ -84,11 +84,12 @@ namespace Personel_Takip_Sistemi
             this.ClientSize = new System.Drawing.Size(604, 235);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDepartmanAd);
             this.Controls.Add(this.label1);
             this.Name = "frmDepartmanEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Departman Bilgileri";
+            this.Load += new System.EventHandler(this.frmDepartmanEkle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,7 +98,7 @@ namespace Personel_Takip_Sistemi
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDepartmanAd;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnKapat;
     }

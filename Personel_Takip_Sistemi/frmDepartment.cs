@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using BLL;
 
 namespace Personel_Takip_Sistemi
 {
@@ -29,12 +31,21 @@ namespace Personel_Takip_Sistemi
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            liste = DepartmanBLL.DepartmanGetir();
+            dataGridView1.DataSource = liste;
 
         }
 
+        List<DEPARTMAN> liste = new List<DEPARTMAN>();
+
         private void frmDepartmentListesi_Load(object sender, EventArgs e)
         {
-
+            
+            liste = DepartmanBLL.DepartmanGetir();
+            dataGridView1.DataSource = liste;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "Departman Adı";
+            
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
