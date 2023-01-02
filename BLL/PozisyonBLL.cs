@@ -17,7 +17,7 @@ namespace BLL
         }
 
 
-        public static List<PozisyonDTO> PozisyonGetir(POZİSYON pz)
+        public static List<PozisyonDTO> PozisyonGetir()
         {
             return PozisyonDAO.PozisyonGetir();
         }

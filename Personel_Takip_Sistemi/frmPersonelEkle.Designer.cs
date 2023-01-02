@@ -84,6 +84,7 @@ namespace Personel_Takip_Sistemi
             this.btnControl.TabIndex = 1;
             this.btnControl.Text = "Kontrol";
             this.btnControl.UseVisualStyleBackColor = false;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
             // checkBoxAdmin
             // 

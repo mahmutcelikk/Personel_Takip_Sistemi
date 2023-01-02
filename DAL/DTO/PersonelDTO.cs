@@ -10,6 +10,9 @@ namespace DAL.DTO
     {
         public List<DEPARTMAN> Departmanlar { get; set; }
 
-        public List<POZİSYON> Pozisyonlar { get; set; }
+        public List<PozisyonDTO> Pozisyonlar { get; set; }
+
+        public List<PersonelDetay> Personeller { get; set; }
+
     }
 }
