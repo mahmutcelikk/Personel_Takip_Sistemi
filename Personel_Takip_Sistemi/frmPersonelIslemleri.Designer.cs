@@ -269,6 +269,7 @@ namespace Personel_Takip_Sistemi
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPersonelIslemleri";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Listesi";
             this.Load += new System.EventHandler(this.frmPersonelIslemleri_Load);
             this.panel1.ResumeLayout(false);

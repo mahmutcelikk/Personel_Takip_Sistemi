@@ -30,12 +30,13 @@ namespace Personel_Takip_Sistemi
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUserNo = new System.Windows.Forms.Label();
-            this.txtUserNoControl = new System.Windows.Forms.TextBox();
-            this.txtSifre = new System.Windows.Forms.TextBox();
-            this.lblSifre = new System.Windows.Forms.Label();
-            this.btnResim = new System.Windows.Forms.Button();
+            this.btnControl = new System.Windows.Forms.Button();
             this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
+            this.lblSifre = new System.Windows.Forms.Label();
+            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.txtUserNoControl = new System.Windows.Forms.TextBox();
+            this.lblUserNo = new System.Windows.Forms.Label();
+            this.btnSec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,16 +45,15 @@ namespace Personel_Takip_Sistemi
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAd = new System.Windows.Forms.TextBox();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtResim = new System.Windows.Forms.TextBox();
             this.txtMaas = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnControl = new System.Windows.Forms.Button();
+            this.comboDepartman = new System.Windows.Forms.ComboBox();
+            this.comboPozisyon = new System.Windows.Forms.ComboBox();
+            this.dtpDogumGunu = new System.Windows.Forms.DateTimePicker();
+            this.txtAdres = new System.Windows.Forms.TextBox();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -74,56 +74,16 @@ namespace Personel_Takip_Sistemi
             this.panel1.Size = new System.Drawing.Size(861, 88);
             this.panel1.TabIndex = 0;
             // 
-            // lblUserNo
+            // btnControl
             // 
-            this.lblUserNo.AutoSize = true;
-            this.lblUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUserNo.Location = new System.Drawing.Point(51, 23);
-            this.lblUserNo.Name = "lblUserNo";
-            this.lblUserNo.Size = new System.Drawing.Size(90, 25);
-            this.lblUserNo.TabIndex = 0;
-            this.lblUserNo.Text = "User No";
-            this.lblUserNo.Click += new System.EventHandler(this.lblUserNo_Click);
-            // 
-            // txtUserNoControl
-            // 
-            this.txtUserNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUserNoControl.Location = new System.Drawing.Point(147, 22);
-            this.txtUserNoControl.Name = "txtUserNoControl";
-            this.txtUserNoControl.Size = new System.Drawing.Size(125, 30);
-            this.txtUserNoControl.TabIndex = 0;
-            this.txtUserNoControl.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtUserNoControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNoControl_KeyPress);
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSifre.Location = new System.Drawing.Point(561, 20);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(137, 30);
-            this.txtSifre.TabIndex = 2;
-            this.txtSifre.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // lblSifre
-            // 
-            this.lblSifre.AutoSize = true;
-            this.lblSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSifre.Location = new System.Drawing.Point(486, 23);
-            this.lblSifre.Name = "lblSifre";
-            this.lblSifre.Size = new System.Drawing.Size(57, 25);
-            this.lblSifre.TabIndex = 2;
-            this.lblSifre.Text = "Şifre";
-            // 
-            // btnResim
-            // 
-            this.btnResim.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnResim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnResim.Location = new System.Drawing.Point(410, 187);
-            this.btnResim.Name = "btnResim";
-            this.btnResim.Size = new System.Drawing.Size(97, 39);
-            this.btnResim.TabIndex = 3;
-            this.btnResim.Text = "Seç";
-            this.btnResim.UseVisualStyleBackColor = false;
+            this.btnControl.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnControl.Location = new System.Drawing.Point(307, 19);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Size = new System.Drawing.Size(130, 37);
+            this.btnControl.TabIndex = 1;
+            this.btnControl.Text = "Kontrol";
+            this.btnControl.UseVisualStyleBackColor = false;
             // 
             // checkBoxAdmin
             // 
@@ -135,6 +95,58 @@ namespace Personel_Takip_Sistemi
             this.checkBoxAdmin.TabIndex = 3;
             this.checkBoxAdmin.Text = "Admin";
             this.checkBoxAdmin.UseVisualStyleBackColor = true;
+            // 
+            // lblSifre
+            // 
+            this.lblSifre.AutoSize = true;
+            this.lblSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSifre.Location = new System.Drawing.Point(486, 23);
+            this.lblSifre.Name = "lblSifre";
+            this.lblSifre.Size = new System.Drawing.Size(57, 25);
+            this.lblSifre.TabIndex = 2;
+            this.lblSifre.Text = "Şifre";
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSifre.Location = new System.Drawing.Point(561, 20);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(137, 30);
+            this.txtSifre.TabIndex = 2;
+            this.txtSifre.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // txtUserNoControl
+            // 
+            this.txtUserNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUserNoControl.Location = new System.Drawing.Point(147, 22);
+            this.txtUserNoControl.Name = "txtUserNoControl";
+            this.txtUserNoControl.Size = new System.Drawing.Size(125, 30);
+            this.txtUserNoControl.TabIndex = 0;
+            this.txtUserNoControl.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUserNoControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNoControl_KeyPress);
+            // 
+            // lblUserNo
+            // 
+            this.lblUserNo.AutoSize = true;
+            this.lblUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserNo.Location = new System.Drawing.Point(51, 23);
+            this.lblUserNo.Name = "lblUserNo";
+            this.lblUserNo.Size = new System.Drawing.Size(90, 25);
+            this.lblUserNo.TabIndex = 0;
+            this.lblUserNo.Text = "User No";
+            this.lblUserNo.Click += new System.EventHandler(this.lblUserNo_Click);
+            // 
+            // btnSec
+            // 
+            this.btnSec.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSec.Location = new System.Drawing.Point(410, 187);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(97, 39);
+            this.btnSec.TabIndex = 3;
+            this.btnSec.Text = "Seç";
+            this.btnSec.UseVisualStyleBackColor = false;
+            this.btnSec.Click += new System.EventHandler(this.btnResim_Click);
             // 
             // label1
             // 
@@ -218,27 +230,28 @@ namespace Personel_Takip_Sistemi
             this.label8.Text = "Adres";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox2
+            // txtAd
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(217, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 30);
-            this.textBox2.TabIndex = 1;
+            this.txtAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAd.Location = new System.Drawing.Point(217, 103);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(176, 30);
+            this.txtAd.TabIndex = 1;
             // 
-            // textBox3
+            // txtSoyad
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(217, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 30);
-            this.textBox3.TabIndex = 2;
+            this.txtSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSoyad.Location = new System.Drawing.Point(217, 145);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(176, 30);
+            this.txtSoyad.TabIndex = 2;
             // 
             // txtResim
             // 
             this.txtResim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtResim.Location = new System.Drawing.Point(217, 190);
             this.txtResim.Name = "txtResim";
+            this.txtResim.ReadOnly = true;
             this.txtResim.Size = new System.Drawing.Size(176, 30);
             this.txtResim.TabIndex = 9;
             // 
@@ -258,51 +271,42 @@ namespace Personel_Takip_Sistemi
             this.pictureBox1.Size = new System.Drawing.Size(209, 245);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // comboBox1
+            // comboDepartman
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(176, 33);
-            this.comboBox1.TabIndex = 5;
+            this.comboDepartman.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboDepartman.FormattingEnabled = true;
+            this.comboDepartman.Location = new System.Drawing.Point(217, 288);
+            this.comboDepartman.Name = "comboDepartman";
+            this.comboDepartman.Size = new System.Drawing.Size(176, 33);
+            this.comboDepartman.TabIndex = 5;
+            this.comboDepartman.SelectedIndexChanged += new System.EventHandler(this.comboDepartman_SelectedIndexChanged);
             // 
-            // comboBox2
+            // comboPozisyon
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(217, 335);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(176, 33);
-            this.comboBox2.TabIndex = 6;
+            this.comboPozisyon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboPozisyon.FormattingEnabled = true;
+            this.comboPozisyon.Location = new System.Drawing.Point(217, 335);
+            this.comboPozisyon.Name = "comboPozisyon";
+            this.comboPozisyon.Size = new System.Drawing.Size(176, 33);
+            this.comboPozisyon.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dtpDogumGunu
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(217, 397);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 22);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpDogumGunu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpDogumGunu.Location = new System.Drawing.Point(217, 397);
+            this.dtpDogumGunu.Name = "dtpDogumGunu";
+            this.dtpDogumGunu.Size = new System.Drawing.Size(195, 22);
+            this.dtpDogumGunu.TabIndex = 7;
             // 
-            // textBox4
+            // txtAdres
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 446);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(311, 118);
-            this.textBox4.TabIndex = 8;
-            // 
-            // btnControl
-            // 
-            this.btnControl.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnControl.Location = new System.Drawing.Point(307, 19);
-            this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(130, 37);
-            this.btnControl.TabIndex = 1;
-            this.btnControl.Text = "Kontrol";
-            this.btnControl.UseVisualStyleBackColor = false;
+            this.txtAdres.Location = new System.Drawing.Point(217, 446);
+            this.txtAdres.Multiline = true;
+            this.txtAdres.Name = "txtAdres";
+            this.txtAdres.Size = new System.Drawing.Size(311, 118);
+            this.txtAdres.TabIndex = 8;
             // 
             // btnKapat
             // 
@@ -326,6 +330,7 @@ namespace Personel_Takip_Sistemi
             this.btnKaydet.TabIndex = 9;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmPersonelEkle
             // 
@@ -334,16 +339,16 @@ namespace Personel_Takip_Sistemi
             this.ClientSize = new System.Drawing.Size(861, 686);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtAdres);
+            this.Controls.Add(this.dtpDogumGunu);
+            this.Controls.Add(this.comboPozisyon);
+            this.Controls.Add(this.comboDepartman);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtMaas);
-            this.Controls.Add(this.btnResim);
+            this.Controls.Add(this.btnSec);
             this.Controls.Add(this.txtResim);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSoyad);
+            this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -354,7 +359,9 @@ namespace Personel_Takip_Sistemi
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "frmPersonelEkle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Bilgileri";
+            this.Load += new System.EventHandler(this.frmPersonelEkle_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -370,7 +377,7 @@ namespace Personel_Takip_Sistemi
         private System.Windows.Forms.TextBox txtSifre;
         private System.Windows.Forms.TextBox txtUserNoControl;
         private System.Windows.Forms.Label lblUserNo;
-        private System.Windows.Forms.Button btnResim;
+        private System.Windows.Forms.Button btnSec;
         private System.Windows.Forms.CheckBox checkBoxAdmin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -380,16 +387,16 @@ namespace Personel_Takip_Sistemi
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAd;
+        private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtResim;
         private System.Windows.Forms.TextBox txtMaas;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboDepartman;
+        private System.Windows.Forms.ComboBox comboPozisyon;
+        private System.Windows.Forms.DateTimePicker dtpDogumGunu;
         private System.Windows.Forms.Button btnControl;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAdres;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.Button btnKaydet;
     }

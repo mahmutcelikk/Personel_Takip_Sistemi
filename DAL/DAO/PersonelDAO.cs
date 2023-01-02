@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.DAO
 {
-    public class PersonelDAO
+    public class PersonelDAO:PersonelDataContext
     {
+
     }
 }

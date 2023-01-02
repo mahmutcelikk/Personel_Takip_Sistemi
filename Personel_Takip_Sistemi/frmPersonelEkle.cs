@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using DAL.DTO;
+using BLL;
 
 namespace Personel_Takip_Sistemi
 {
@@ -61,6 +64,72 @@ namespace Personel_Takip_Sistemi
             {
                 e.Handled = true;
             }
+        }
+
+        PersonelDTO dto = new PersonelDTO(); 
+        private void frmPersonelEkle_Load(object sender, EventArgs e)
+        {
+            dto = PersonelBLL.GetAll();
+            comboDepartman.DataSource = dto.Departmanlar;
+            comboDepartman.DisplayMember = "Departman Adı";
+            comboDepartman.ValueMember = "ID";
+            comboDepartman.SelectedIndex = -1;
+            comboPozisyon.DataSource = dto.Pozisyonlar;
+            comboPozisyon.DisplayMember = "Pozisyon Adı";
+            comboPozisyon.ValueMember = "ID";
+            comboPozisyon.SelectedIndex = -1;
+
+        }
+
+        private void btnResim_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog resim = new OpenFileDialog();
+            resim.ShowDialog();     
+            if(resim.ShowDialog()==DialogResult.OK)
+            {
+                pictureBox1.Load(resim.FileName);
+                txtResim.Text = resim.FileName;
+            }
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtUserNoControl.Text.Trim() == "")
+                MessageBox.Show("User No giriniz.");
+            if (txtAd.Text.Trim() == "")
+                MessageBox.Show("Adınızı giriniz.");
+            if (txtSoyad.Text.Trim() == "")
+                MessageBox.Show("Soyadınızı giriniz.");
+            if (txtMaas.Text.Trim() == "")
+                MessageBox.Show("Maaş giriniz.");
+            if (txtSifre.Text.Trim() == "")
+                MessageBox.Show("Şifre giriniz.");
+            if (txtResim.Text.Trim() == "")
+                MessageBox.Show("Resim seçiniz.");
+            if (comboDepartman.SelectedIndex == -1)
+                MessageBox.Show("Departman seçiniz.");
+            if (comboPozisyon.SelectedIndex == -1)
+                MessageBox.Show("Pozisyon seçiniz.");
+            else
+            {
+                PERSONEL ps = new PERSONEL();
+                ps.UserNo = Convert.ToInt32(txtUserNoControl.Text);
+                ps.Ad = txtAd.Text;
+                ps.Soyad = txtSoyad.Text;
+
+            }
+        }
+
+        private void comboDepartman_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
