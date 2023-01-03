@@ -43,9 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DepartmanDAO.cs" />
+    <Compile Include="DAO\IsDAO.cs" />
     <Compile Include="DAO\PersonelDAO.cs" />
     <Compile Include="DAO\PersonelDataContext.cs" />
     <Compile Include="DAO\PozisyonDAO.cs" />
+    <Compile Include="DTO\IsDetayDTO.cs" />
+    <Compile Include="DTO\IsDTO.cs" />
     <Compile Include="DTO\PersonelDetay.cs" />
     <Compile Include="DTO\PersonelDTO.cs" />
     <Compile Include="DTO\PozisyonDTO.cs" />

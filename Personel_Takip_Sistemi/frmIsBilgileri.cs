@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL.DAO;
+using DAL.DTO;
 
 namespace Personel_Takip_Sistemi
 {
@@ -20,6 +23,14 @@ namespace Personel_Takip_Sistemi
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        IsDTO dto = new IsDTO();
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboDurum.Visible = false;
+            lblIsDurum.Visible = false;
+            dto = IsBLL.GetAll();
         }
     }
 }
