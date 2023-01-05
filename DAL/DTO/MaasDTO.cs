@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace DAL.DTO
 {
-    public class PersonelDTO
+    public class MaasDTO
     {
         public List<DEPARTMAN> Departmanlar { get; set; }
         public List<PozisyonDTO> Pozisyonlar { get; set; }
         public List<PersonelDetay> Personeller { get; set; }
+        public List<MaasDetayDTO> Maaslar { get; set; }
+        public List<AYLAR> Aylar { get; set; }
+
 
     }
 }

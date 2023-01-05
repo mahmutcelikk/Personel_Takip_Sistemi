@@ -9,22 +9,22 @@ using DAL;
 
 namespace BLL
 {
-    public class IsBLL
+    public class MaasBLL
     {
-        public static IsDTO GetAll()
+        public static MaasDTO GetALL()
         {
-            IsDTO dto = new IsDTO();
+            MaasDTO dto = new MaasDTO();
             dto.Departmanlar = DepartmanDAO.DepartmanGetir();
             dto.Pozisyonlar = PozisyonDAO.PozisyonGetir();
             dto.Personeller = PersonelDAO.PersonelGetir();
-            dto.IsDurumlari = IsDAO.DurumGetir();
-            dto.Isler = IsDAO.IsGetir();
+            dto.Aylar = MaasDAO.AylarGetir();
+            dto.Maaslar = MaasDAO.MaasGetir();
             return dto;
         }
 
-        public static void IsEkle(I iss)
+        public static void MaasEkle(MAA maas)
         {
-            IsDAO.IsEkle(iss);
+            MaasDAO.MaasEkle(maas);
         }
     }
 }

@@ -57,12 +57,14 @@ namespace Personel_Takip_Sistemi
             comboDepartman.DisplayMember = "Departman Adı";
             comboDepartman.ValueMember = "ID";
             comboDepartman.SelectedIndex = -1;
+            if (dto.Departmanlar.Count > 0)
+                comboFull = true;
             comboPozisyon.DataSource = dto.Pozisyonlar;
             comboPozisyon.DisplayMember = "PozisyonAd";
             comboPozisyon.ValueMember = "ID";
             comboPozisyon.SelectedIndex = -1;
-            if (dto.Departmanlar.Count > 0)
-                comboFull = true;
+           
+            
 
         }
 

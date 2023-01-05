@@ -54,7 +54,7 @@ namespace Personel_Takip_Sistemi
 
         private void btnMaas_Click(object sender, EventArgs e)
         {
-            frmIsler frm = new frmIsler();
+            frmMaasListesi frm = new frmMaasListesi();
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;

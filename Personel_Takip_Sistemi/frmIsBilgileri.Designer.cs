@@ -60,21 +60,24 @@ namespace Personel_Takip_Sistemi
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(686, 0);
+            this.panel1.Location = new System.Drawing.Point(598, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 597);
+            this.panel1.Size = new System.Drawing.Size(437, 597);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 206);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(200, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(437, 391);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // panel2
             // 
@@ -85,14 +88,14 @@ namespace Personel_Takip_Sistemi
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 192);
+            this.panel2.Size = new System.Drawing.Size(437, 206);
             this.panel2.TabIndex = 0;
             // 
             // comboPozisyon
             // 
             this.comboPozisyon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboPozisyon.FormattingEnabled = true;
-            this.comboPozisyon.Location = new System.Drawing.Point(23, 129);
+            this.comboPozisyon.Location = new System.Drawing.Point(83, 137);
             this.comboPozisyon.Name = "comboPozisyon";
             this.comboPozisyon.Size = new System.Drawing.Size(155, 33);
             this.comboPozisyon.TabIndex = 1;
@@ -101,16 +104,17 @@ namespace Personel_Takip_Sistemi
             // 
             this.comboDepartman.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboDepartman.FormattingEnabled = true;
-            this.comboDepartman.Location = new System.Drawing.Point(23, 49);
+            this.comboDepartman.Location = new System.Drawing.Point(83, 57);
             this.comboDepartman.Name = "comboDepartman";
             this.comboDepartman.Size = new System.Drawing.Size(155, 33);
             this.comboDepartman.TabIndex = 0;
+            this.comboDepartman.SelectedIndexChanged += new System.EventHandler(this.comboDepartman_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(18, 101);
+            this.label5.Location = new System.Drawing.Point(78, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 25);
             this.label5.TabIndex = 13;
@@ -120,7 +124,7 @@ namespace Personel_Takip_Sistemi
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(18, 21);
+            this.label4.Location = new System.Drawing.Point(78, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 25);
             this.label4.TabIndex = 12;
@@ -251,6 +255,7 @@ namespace Personel_Takip_Sistemi
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnKapat
             // 
@@ -268,7 +273,7 @@ namespace Personel_Takip_Sistemi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 597);
+            this.ClientSize = new System.Drawing.Size(1035, 597);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.txtRapor);
@@ -286,6 +291,7 @@ namespace Personel_Takip_Sistemi
             this.Controls.Add(this.panel1);
             this.Name = "frmIsBilgileri";
             this.Text = "frmIsBilgileri";
+            this.Load += new System.EventHandler(this.frmIsBilgileri_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
