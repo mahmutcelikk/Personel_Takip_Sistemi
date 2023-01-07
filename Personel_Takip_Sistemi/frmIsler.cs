@@ -58,6 +58,7 @@ namespace Personel_Takip_Sistemi
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
 
 
             comboDepartman.DataSource = dto.Departmanlar;
@@ -82,6 +83,7 @@ namespace Personel_Takip_Sistemi
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            frm.isUpdate = false;
             comboFull = false;
             Doldur();
             Temizle();
@@ -92,6 +94,8 @@ namespace Personel_Takip_Sistemi
             frmIsBilgileri frm = new frmIsBilgileri();
             this.Hide();
             frm.ShowDialog();
+            frm.isUpdate = true;
+            frm.detay = detay;
             this.Visible = true;
             comboFull = false;
             Doldur();
@@ -151,6 +155,25 @@ namespace Personel_Takip_Sistemi
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+
+        public IsDetayDTO detay = new IsDetayDTO();
+        public bool isUpdate = false;
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detay.IsID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detay.UserNo= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detay.PersonelID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detay.IsDurumID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detay.IsBaslik = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            detay.IsRapor = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+            detay.Ad = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detay.Soyad = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detay.IsBaslamaTarihi = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+            detay.IsBitisTarihi= Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+     
+
         }
     }
 }

@@ -134,6 +134,7 @@ namespace Personel_Takip_Sistemi
             comboPozisyon.SelectedIndex  = -1;
             comboPozisyon.DataSource = dto.Pozisyonlar;
             dataGridView1.DataSource = dto.Personeller;
+            
         }
     }
 }

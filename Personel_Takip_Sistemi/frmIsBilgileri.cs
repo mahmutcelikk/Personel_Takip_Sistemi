@@ -41,6 +41,8 @@ namespace Personel_Takip_Sistemi
             }
         }
         IsDTO dto = new IsDTO();
+        public bool isUpdate = false;
+        public IsDetayDTO detay = new IsDetayDTO();
         private void frmIsBilgileri_Load(object sender, EventArgs e)
         {
             comboDurum.Visible = false;
@@ -75,6 +77,22 @@ namespace Personel_Takip_Sistemi
             comboPozisyon.ValueMember = "ID";
             comboPozisyon.SelectedIndex = -1;
 
+            if (isUpdate)
+            {
+                comboDurum.Visible = false;
+                lblIsDurum.Visible = false;
+                txtAd.Text = detay.Ad;
+                txtSoyad.Text = detay.Soyad;
+                txtUserNo.Text = detay.UserNo.ToString();
+                txtRapor.Text = detay.IsRapor;
+                txtBaslik.Text = detay.IsBaslik;
+                comboDurum.DataSource = detay.IsDurum;
+                comboDurum.DisplayMember = "IsDurumAd";
+                comboDurum.ValueMember = "ID";
+                comboDurum.SelectedIndex = detay.IsDurumID;
+
+            }
+
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -97,14 +115,45 @@ namespace Personel_Takip_Sistemi
                 MessageBox.Show("İş Raporunu doldurunuz.");
             else
             {
-                iss.Baslik = txtBaslik.Text;
-                iss.Icerik = txtRapor.Text;
-                iss.IsDurumID = 1;
-                iss.IsBaslamaTarihi = DateTime.Today;
-                IsBLL.IsEkle(iss);
-                MessageBox.Show("İş Başarıyla Eklendi.");
-                txtBaslik.Clear();
-                txtRapor.Clear();
+                if(isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Güncellemeyi Onaylıyor Musunuz ?", "Dikkat", MessageBoxButtons.YesNo);
+
+                    if(result == DialogResult.Yes) 
+                    {
+                        IsDetayDTO dtoo = new IsDetayDTO();
+                        if(Convert.ToInt32(txtUserNo.Text) != detay.UserNo)
+                        {
+                            dtoo.PersonelID = iss.PersonelID;
+                        }
+                        else
+                        {
+                            dtoo.PersonelID = detay.PersonelID;
+                            dtoo.IsBaslik = detay.IsBaslik;
+                            dtoo.IsRapor = detay.IsRapor;
+                            dtoo.IsDurumID = Convert.ToInt32(detay.IsDurumID);
+                            dtoo.IsID = detay.IsID;
+                            IsBLL.IsGuncelle(dtoo);
+                            MessageBox.Show("Güncellendi");
+                            this.Close();
+                        }
+                    }
+                }
+
+                else
+                {
+                    iss.Baslik = txtBaslik.Text;
+                    iss.Icerik = txtRapor.Text;
+                    iss.IsDurumID = 1;
+                    iss.IsBaslamaTarihi = DateTime.Today;
+                    IsBLL.IsEkle(iss);
+                    MessageBox.Show("İş Başarıyla Eklendi.");
+                    txtBaslik.Clear();
+                    txtRapor.Clear();
+
+                }
+
+               
             }
 
             

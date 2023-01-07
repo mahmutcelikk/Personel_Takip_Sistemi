@@ -73,6 +73,12 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static List<PERSONEL> PersonelGetir(int v, string text)
+        {
+            return db.PERSONELs.Where(x => x.UserNo == v && x.Password == text).ToList();
+            
+        }
+
         public static List<PERSONEL> PersonelGetir(int v)
         {
             return db.PERSONELs.Where(x => x.UserNo == v).ToList();

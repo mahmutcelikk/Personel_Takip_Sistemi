@@ -29,7 +29,7 @@ namespace Personel_Takip_Sistemi
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.lblUserNo = new System.Windows.Forms.Label();
             this.txtIzinSure = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,19 +38,19 @@ namespace Personel_Takip_Sistemi
             this.lblFinish = new System.Windows.Forms.Label();
             this.lblStart = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(291, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(157, 30);
-            this.textBox1.TabIndex = 5;
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUser.Location = new System.Drawing.Point(291, 56);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
+            this.txtUser.Size = new System.Drawing.Size(157, 30);
+            this.txtUser.TabIndex = 5;
             // 
             // lblUserNo
             // 
@@ -88,6 +88,7 @@ namespace Personel_Takip_Sistemi
             this.dpBitis.Name = "dpBitis";
             this.dpBitis.Size = new System.Drawing.Size(200, 22);
             this.dpBitis.TabIndex = 1;
+            this.dpBitis.ValueChanged += new System.EventHandler(this.dpBitis_ValueChanged);
             // 
             // dpBaslama
             // 
@@ -95,6 +96,7 @@ namespace Personel_Takip_Sistemi
             this.dpBaslama.Name = "dpBaslama";
             this.dpBaslama.Size = new System.Drawing.Size(200, 22);
             this.dpBaslama.TabIndex = 0;
+            this.dpBaslama.ValueChanged += new System.EventHandler(this.dpBaslama_ValueChanged);
             // 
             // lblFinish
             // 
@@ -128,14 +130,14 @@ namespace Personel_Takip_Sistemi
             this.label2.TabIndex = 24;
             this.label2.Text = "Başlık";
             // 
-            // textBox2
+            // txtAciklama
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(291, 280);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(356, 141);
-            this.textBox2.TabIndex = 2;
+            this.txtAciklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAciklama.Location = new System.Drawing.Point(291, 280);
+            this.txtAciklama.Multiline = true;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(356, 141);
+            this.txtAciklama.TabIndex = 2;
             // 
             // btnKapat
             // 
@@ -159,6 +161,7 @@ namespace Personel_Takip_Sistemi
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // frmIzinBilgileri
             // 
@@ -167,7 +170,7 @@ namespace Personel_Takip_Sistemi
             this.ClientSize = new System.Drawing.Size(798, 566);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAciklama);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIzinSure);
             this.Controls.Add(this.label1);
@@ -175,10 +178,11 @@ namespace Personel_Takip_Sistemi
             this.Controls.Add(this.dpBaslama);
             this.Controls.Add(this.lblFinish);
             this.Controls.Add(this.lblStart);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblUserNo);
             this.Name = "frmIzinBilgileri";
             this.Text = "frmIzinBilgileri";
+            this.Load += new System.EventHandler(this.frmIzinBilgileri_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +190,7 @@ namespace Personel_Takip_Sistemi
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblUserNo;
         private System.Windows.Forms.TextBox txtIzinSure;
         private System.Windows.Forms.Label label1;
@@ -195,7 +199,7 @@ namespace Personel_Takip_Sistemi
         private System.Windows.Forms.Label lblFinish;
         private System.Windows.Forms.Label lblStart;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.Button btnKaydet;
     }

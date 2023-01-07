@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using DAL.DTO;
+using BLL;
 
 namespace Personel_Takip_Sistemi
 {
@@ -43,9 +46,30 @@ namespace Personel_Takip_Sistemi
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            frmMain frm = new frmMain();
-            this.Hide();
-            frm.ShowDialog();
+            if (txtUserNo.Text.Trim() == "")
+                MessageBox.Show("Lütfen kullanıcı adı giriniz.");
+            else if (txtPassword.Text.Trim() == "")
+                MessageBox.Show("Lütfen şifre giriniz.");
+            else
+            {
+                List<PERSONEL> list = new List<PERSONEL>();
+                list = PersonelBLL.PersonelGetir(Convert.ToInt32(txtUserNo.Text),txtPassword.Text);
+                if (list.Count <= 0)
+                    MessageBox.Show("Kullanıcı adı ve şifre giriniz.");
+                else
+                {
+                    PERSONEL personel = list.First();
+                    UserStatic.PersonelID = personel.ID;
+                    UserStatic.IsAdmin = personel.isAdmin;
+                    UserStatic.UserNo = personel.UserNo;
+                    frmMain frm = new frmMain();
+                    this.Hide();
+                    frm.ShowDialog();
+                }
+
+            }
+            
+
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

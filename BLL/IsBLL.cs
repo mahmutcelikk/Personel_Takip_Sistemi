@@ -26,5 +26,10 @@ namespace BLL
         {
             IsDAO.IsEkle(iss);
         }
+
+        public static void IsGuncelle(IsDetayDTO dtoo)
+        {
+            IsDAO.IsGuncell(dtoo);
+        }
     }
 }
