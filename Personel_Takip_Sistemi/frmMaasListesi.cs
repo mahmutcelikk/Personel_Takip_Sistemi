@@ -83,6 +83,7 @@ namespace Personel_Takip_Sistemi
         {
             frmMaas frm = new frmMaas();
             this.Hide();
+            frm.isUpdate = false;
             frm.ShowDialog();
             this.Visible = true;
             Temizle();
@@ -94,6 +95,8 @@ namespace Personel_Takip_Sistemi
         {
             frmMaas frm = new frmMaas();
             this.Hide();
+            frm.isUpdate = true;
+            frm.detay = detay;
             frm.ShowDialog();
             this.Visible = true;
             Temizle();
@@ -103,6 +106,8 @@ namespace Personel_Takip_Sistemi
 
         MaasDTO dto = new MaasDTO();
         bool comboFull ;
+        public bool isUpdate = false;
+        MaasDetayDTO detay = new MaasDetayDTO();
         private void frmMaasListesi_Load(object sender, EventArgs e)
         {
             Doldur();
@@ -143,6 +148,8 @@ namespace Personel_Takip_Sistemi
             comboMaasAy.ValueMember = "ID";
             comboMaasAy.SelectedIndex = -1;
 
+           
+
         }
 
         private void comboDepartman_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,5 +188,18 @@ namespace Personel_Takip_Sistemi
         {
 
         }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detay.MaasID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detay.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detay.PersonelID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detay.MaasAyID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detay.MaasYil = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detay.Ad = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detay.Soyad = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+        }
+
+        
     }
 }

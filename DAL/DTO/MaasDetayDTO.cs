@@ -21,6 +21,7 @@ namespace DAL.DTO
         public int MaasMiktar { get; set; }
         public int MaasID { get; set; }
         public int MaasAyID { get; set; }
+        public int EskiMaas { get; set; }
 
     }
 }

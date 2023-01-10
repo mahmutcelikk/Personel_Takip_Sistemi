@@ -26,5 +26,12 @@ namespace BLL
         {
             MaasDAO.MaasEkle(maas);
         }
+
+        public static void MaasGuncelle(MaasDetayDTO maas, bool control)
+        {
+            MaasDAO.MaasGuncelle(maas);
+            if (control)
+                PersonelDAO.PersonelMaasGuncelle(maas);
+        }
     }
 }

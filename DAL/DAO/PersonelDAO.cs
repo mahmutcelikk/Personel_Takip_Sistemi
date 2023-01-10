@@ -73,6 +73,21 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static void PersonelMaasGuncelle(MaasDetayDTO maas)
+        {
+            try
+            {
+                PERSONEL pr = db.PERSONELs.First(x => x.ID == maas.PersonelID);
+                pr.Maas = maas.MaasMiktar;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static List<PERSONEL> PersonelGetir(int v, string text)
         {
             return db.PERSONELs.Where(x => x.UserNo == v && x.Password == text).ToList();

@@ -52,7 +52,7 @@ namespace DAL.DAO
                             pozisyonID = p.PozisyonID,
                             isDurum = durum.IsDurumAd,
                             isDurumID = i.IsDurumID,
-                            personelID=i.ID,
+                            personelID=i.PersonelID,
 
 
                         }
@@ -82,15 +82,15 @@ namespace DAL.DAO
 
         }
 
-        public static void IsGuncell(IsDetayDTO dtoo)
+        public static void IsGuncell(IsDetayDTO dto)
         {
             try
             {
-                I iss = db.Is.First(x => x.ID == dtoo.IsID);
-                iss.Baslik = dtoo.IsBaslik;
-                iss.Icerik = dtoo.IsRapor;
-                iss.IsDurumID = dtoo.IsDurumID;
-                iss.PersonelID = dtoo.PersonelID;
+                I iss = db.Is.First(x => x.ID == dto.IsID);
+                iss.Baslik = dto.IsBaslik;
+                iss.Icerik = dto.IsRapor;
+                iss.IsDurumID = dto.IsDurumID;
+                iss.PersonelID = dto.PersonelID;
                 db.SubmitChanges();
             } 
             catch (Exception ex)

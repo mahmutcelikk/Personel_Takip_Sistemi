@@ -36,8 +36,13 @@ namespace Personel_Takip_Sistemi
                 e.Handled = true;
             }
         }
+
         MaasDTO dto = new MaasDTO();
         bool comboFull;
+        public bool isUpdate = false;
+        public MaasDetayDTO detay = new MaasDetayDTO();
+        bool control = false;
+
         private void frmMaas_Load(object sender, EventArgs e)
         {
             dto = MaasBLL.GetALL();
@@ -75,6 +80,18 @@ namespace Personel_Takip_Sistemi
             comboAylar.ValueMember = "ID";
             comboAylar.SelectedIndex = -1;
             txtYil.Text = DateTime.Today.Year.ToString();
+
+            if (isUpdate)
+            {
+                txtAd.Text = detay.Ad;
+                txtSoyad.Text = detay.Soyad;
+                txtUser.Text = detay.UserNo.ToString();
+                txtMaas.Text = detay.MaasMiktar.ToString();
+                txtYil.Text = detay.MaasYil.ToString();
+                comboAylar.SelectedValue = detay.MaasAyID;
+
+
+            }
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,6 +125,28 @@ namespace Personel_Takip_Sistemi
                 MessageBox.Show("Ay Seçiniz.");
             else
             {
+                if(isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Maaş Güncellemesini Onaylıyor Musunuz ?", "Dikkat !", MessageBoxButtons.YesNo);
+                    if(result == DialogResult.Yes)
+                    {
+                        MaasDetayDTO maas = new MaasDetayDTO();
+                        maas.MaasID = detay.MaasID;
+                        maas.MaasAyID = Convert.ToInt32(comboAylar.SelectedValue);
+                        maas.MaasYil =  Convert.ToInt32(txtYil.Text);
+                        maas.EskiMaas = detay.MaasMiktar;
+                        maas.MaasMiktar = Convert.ToInt32(txtMaas.Text);
+                        
+                        if (maas.MaasMiktar > maas.EskiMaas)
+                            control = true;
+                        MaasBLL.MaasGuncelle(maas,control);
+                        MessageBox.Show("Maaş Güncellendi.");
+                        this.Close();
+                        
+                    }
+                }
+
+                else { 
                 maas.Ay_ID = Convert.ToInt32(comboAylar.SelectedValue);
                 maas.Miktar = Convert.ToInt32(txtMaas.Text);
                 maas.YIL = Convert.ToInt32(txtYil.Text);
@@ -115,7 +154,7 @@ namespace Personel_Takip_Sistemi
                 MessageBox.Show("Maaş Eklendi.");
                 txtMaas.Clear();
                 maas = new MAA();
-
+                }
             }
         }
 

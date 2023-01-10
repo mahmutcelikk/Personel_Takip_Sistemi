@@ -53,8 +53,8 @@ namespace Personel_Takip_Sistemi
             dataGridView1.Columns[1].HeaderText = "User No";
             dataGridView1.Columns[2].HeaderText = "Ad";
             dataGridView1.Columns[3].HeaderText = "Soyad";
-            dataGridView1.Columns[4].HeaderText = "Departman";
-            dataGridView1.Columns[5].HeaderText = "Pozisyon";
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
@@ -63,7 +63,7 @@ namespace Personel_Takip_Sistemi
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
-
+            dataGridView1.Columns[14].Visible = false;
 
 
             comboDepartman.DataSource = dto.Departmanlar;
@@ -86,7 +86,7 @@ namespace Personel_Takip_Sistemi
                 txtUserNo.Text = detay.UserNo.ToString();
                 txtRapor.Text = detay.IsRapor;
                 txtBaslik.Text = detay.IsBaslik;
-                comboDurum.DataSource = detay.IsDurum;
+                comboDurum.DataSource = dto.IsDurumlari;
                 comboDurum.DisplayMember = "IsDurumAd";
                 comboDurum.ValueMember = "ID";
                 comboDurum.SelectedIndex = detay.IsDurumID;
@@ -117,11 +117,11 @@ namespace Personel_Takip_Sistemi
             {
                 if(isUpdate)
                 {
-                    DialogResult result = MessageBox.Show("Güncellemeyi Onaylıyor Musunuz ?", "Dikkat", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Kayıt İşlemini Onaylıyor Musunuz ?", "Dikkat", MessageBoxButtons.YesNo);
 
                     if(result == DialogResult.Yes) 
                     {
-                        IsDetayDTO dtoo = new IsDetayDTO();
+                        IsDetayDTO dtoo = new IsDetayDTO(); 
                         if(Convert.ToInt32(txtUserNo.Text) != detay.UserNo)
                         {
                             dtoo.PersonelID = iss.PersonelID;
@@ -130,7 +130,7 @@ namespace Personel_Takip_Sistemi
                         {
                             dtoo.PersonelID = detay.PersonelID;
                             dtoo.IsBaslik = detay.IsBaslik;
-                            dtoo.IsRapor = detay.IsRapor;
+                            dtoo.IsRapor = detay.IsRapor; 
                             dtoo.IsDurumID = Convert.ToInt32(detay.IsDurumID);
                             dtoo.IsID = detay.IsID;
                             IsBLL.IsGuncelle(dtoo);
