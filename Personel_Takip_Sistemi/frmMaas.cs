@@ -103,6 +103,7 @@ namespace Personel_Takip_Sistemi
             }
         }
         MAA maas = new MAA();
+        int maasMiktar = 0;
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             maas.PersonelID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
