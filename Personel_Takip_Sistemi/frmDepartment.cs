@@ -30,6 +30,7 @@ namespace Personel_Takip_Sistemi
             frmDepartmanEkle frm = new frmDepartmanEkle();
             this.Hide();
             frm.ShowDialog();
+            frm.isUpdate = false;
             this.Visible = true;
             liste = DepartmanBLL.DepartmanGetir();
             dataGridView1.DataSource = liste;
@@ -37,7 +38,7 @@ namespace Personel_Takip_Sistemi
         }
 
         List<DEPARTMAN> liste = new List<DEPARTMAN>();
-
+        DEPARTMAN detay = new DEPARTMAN();
         private void frmDepartmentListesi_Load(object sender, EventArgs e)
         {
             
@@ -53,7 +54,17 @@ namespace Personel_Takip_Sistemi
             frmDepartmanEkle frm = new frmDepartmanEkle();
             this.Hide();
             frm.ShowDialog();
+            frm.isUpdate = true;
+            frm.detay = detay;
             this.Visible = true;
+            liste = DepartmanBLL.DepartmanGetir();
+            dataGridView1.DataSource = liste;
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detay.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detay.DepartmanAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }
 }

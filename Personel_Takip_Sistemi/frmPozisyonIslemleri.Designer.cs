@@ -109,6 +109,7 @@ namespace Personel_Takip_Sistemi
             this.dataGridPozisyon.RowTemplate.Height = 24;
             this.dataGridPozisyon.Size = new System.Drawing.Size(729, 388);
             this.dataGridPozisyon.TabIndex = 1;
+            this.dataGridPozisyon.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPozisyon_RowEnter);
             // 
             // frmPozisyonIslemleri
             // 

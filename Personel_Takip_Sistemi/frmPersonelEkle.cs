@@ -67,7 +67,10 @@ namespace Personel_Takip_Sistemi
             }
         }
 
-        PersonelDTO dto = new PersonelDTO(); 
+        PersonelDTO dto = new PersonelDTO();
+        public PersonelDetay detay = new PersonelDetay();
+        public bool isUpdate = false;
+        string resim2 = "";
         private void frmPersonelEkle_Load(object sender, EventArgs e)
         {
             dto = PersonelBLL.GetAll();
@@ -81,6 +84,23 @@ namespace Personel_Takip_Sistemi
             comboPozisyon.SelectedIndex = -1;
             if(dto.Departmanlar.Count>0)
                 comboFull = true;
+            if(isUpdate)
+            {
+                txtAd.Text = detay.Ad;
+                txtSoyad.Text = detay.Soyad;
+                txtAdres.Text = detay.Adres;
+                txtMaas.Text = detay.Maas.ToString();
+                txtSifre.Text = detay.Sifre;
+                txtUserNo.Text = detay.UserNo.ToString();
+                checkBoxAdmin.Checked = detay.isAdmin;
+                comboDepartman.SelectedValue = detay.DepartmanID;
+                comboPozisyon.SelectedValue = detay.PozisyonID;
+                resim2 = Application.StartupPath + "\\resimler\\" + detay.Resim;
+                txtResim.Text = resim2;
+                pictureBox1.Load(resim2);
+
+
+            }
 
         }
 
@@ -106,9 +126,9 @@ namespace Personel_Takip_Sistemi
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtUserNoControl.Text.Trim() == "")
+            if (txtUserNo.Text.Trim() == "")
                 MessageBox.Show("User No giriniz.");
-            else if (PersonelBLL.isUnique(Convert.ToInt32(txtUserNoControl.Text)))
+            else if (PersonelBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
                 MessageBox.Show("Bu kullanıcı mevcut. Lütfen yeni bir kullanıcı giriniz.");
             else if (txtAd.Text.Trim() == "")
                 MessageBox.Show("Adınızı giriniz.");
@@ -126,8 +146,44 @@ namespace Personel_Takip_Sistemi
                 MessageBox.Show("Pozisyon seçiniz.");
             else
             {
+
+                if(isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Güncellemeyi Onaylıyor Musunuz ?", "Dikkat !", MessageBoxButtons.YesNo);
+                    if(result == DialogResult.Yes)
+                    {
+                        PersonelDetay ps = new PersonelDetay();
+                        ps.PersonelID = detay.PersonelID;
+                        ps.UserNo = Convert.ToInt32(txtUserNo.Text);
+                        ps.Sifre = txtSifre.Text;
+                        ps.Ad = txtAd.Text;
+                        ps.Soyad = txtSoyad.Text;
+                        ps.Maas = Convert.ToInt32(txtMaas.Text);
+                        ps.Adres = txtAdres.Text;
+                        ps.DogumTarihi = dtpDogumGunu.Value;
+                        ps.isAdmin = checkBoxAdmin.Checked;
+                        ps.PozisyonID = Convert.ToInt32(comboPozisyon.SelectedValue);
+                        ps.DepartmanID = Convert.ToInt32(comboDepartman.SelectedValue);
+                        if (resim2 != txtResim.Text)
+                        { 
+                            ps.Resim = resimAd;
+                            if (File.Exists(resim2))
+                                File.Delete(resim2);
+                            File.Copy(txtResim.Text, @"resimler\\" + resimAd);
+                        }
+                        else
+                            ps.Resim = detay.Resim;
+                        PersonelBLL.PersonelGuncelle(ps);
+                        MessageBox.Show("Güncellendi");
+                        this.Close();
+                    }
+                }
+
+                else
+                {
+
                 PERSONEL ps = new PERSONEL();
-                ps.UserNo = Convert.ToInt32(txtUserNoControl.Text);
+                ps.UserNo = Convert.ToInt32(txtUserNo.Text);
                 ps.Password = txtSifre.Text;
                 ps.Ad = txtAd.Text;
                 ps.Soyad = txtSoyad.Text;
@@ -141,7 +197,7 @@ namespace Personel_Takip_Sistemi
                 PersonelBLL.PersonelEkle(ps);
                 File.Copy(txtResim.Text,@"resimler\\" + resimAd);
                 MessageBox.Show("Personel Eklendi.");
-                txtUserNoControl.Clear();
+                txtUserNo.Clear();
                 txtSifre.Clear();
                 txtAd.Clear();
                 txtSoyad.Clear();
@@ -154,6 +210,7 @@ namespace Personel_Takip_Sistemi
                 comboDepartman.SelectedIndex = -1;
                 txtResim.Clear();
                 resimAd = " ";
+                }
 
             }
         }
@@ -170,11 +227,11 @@ namespace Personel_Takip_Sistemi
 
         private void btnControl_Click(object sender, EventArgs e)
         {
-            if (txtUserNoControl.Text.Trim() == "")
+            if (txtUserNo.Text.Trim() == "")
             {
                 MessageBox.Show("User No Boş");
             }
-            else if (PersonelBLL.isUnique(Convert.ToInt32(txtUserNoControl.Text)))
+            else if (PersonelBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
             {
                 MessageBox.Show("Bu userno mevcuttur. Lütfen yeni bir user no giriniz.");
             }

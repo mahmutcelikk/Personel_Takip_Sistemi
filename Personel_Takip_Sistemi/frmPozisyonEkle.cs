@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL.DAO;
+using DAL.DTO;
 using DAL;
 
 namespace Personel_Takip_Sistemi
@@ -25,6 +27,8 @@ namespace Personel_Takip_Sistemi
         }
 
         List<DEPARTMAN> departmanlar = new List<DEPARTMAN>();
+        public bool isUpdate = false;
+        public PozisyonDetayDTO detay = new PozisyonDetayDTO();
         private void frmPozisyonEkle_Load(object sender, EventArgs e)
         {
             departmanlar = DAL.DAO.DepartmanDAO.DepartmanGetir();
@@ -32,6 +36,13 @@ namespace Personel_Takip_Sistemi
             cmbDepAdi.DisplayMember = "DepartmanAd";
             cmbDepAdi.ValueMember = "ID";
             cmbDepAdi.SelectedIndex = -1;
+
+            if (isUpdate)
+            {
+                txtPozAdi.Text = detay.PozisyonAD;
+                cmbDepAdi.SelectedValue = detay.DepartmanID;
+            }
+        
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -46,13 +57,34 @@ namespace Personel_Takip_Sistemi
             }
             else
             {
-                POZİSYON pz = new POZİSYON();
-                pz.PozisyonAd = txtPozAdi.Text;
-                pz.DepartmanID = Convert.ToInt32(cmbDepAdi.SelectedValue);
-                PozisyonBLL.PozisyonEkle(pz);
-                MessageBox.Show("Pozisyon Eklendi.");
-                txtPozAdi.Clear();
-                cmbDepAdi.SelectedIndex = -1;
+
+                if(isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Güncellemeyi Onaylıyor Musunuz ?", "Dikkat !", MessageBoxButtons.YesNo);
+
+                    if(result == DialogResult.Yes)
+                    {
+                        detay.PozisyonAD = txtPozAdi.Text;
+                        detay.DepartmanID = Convert.ToInt32(cmbDepAdi.SelectedValue);
+                        bool control = false;
+                        if (detay.EskiDepartmanID == detay.DepartmanID)
+                            control = true;
+                        PozisyonBLL.PozisyonGuncelle(detay, control);
+                        MessageBox.Show("Güncelleme Başarılı.");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    POZİSYON pz = new POZİSYON();
+                    pz.PozisyonAd = txtPozAdi.Text;
+                    pz.DepartmanID = Convert.ToInt32(cmbDepAdi.SelectedValue);
+                    PozisyonBLL.PozisyonEkle(pz);
+                    MessageBox.Show("Pozisyon Eklendi.");
+                    txtPozAdi.Clear();
+                    cmbDepAdi.SelectedIndex = -1;
+                }
+            
 
             }
         }

@@ -58,5 +58,13 @@ namespace DAL.DAO
                 throw ex;
             }
         }
+
+        public static void PozisyonGuncelle(PozisyonDetayDTO detay)
+        {
+            POZİSYON pz = db.POZİSYONs.First(x => x.ID == detay.ID);
+            pz.PozisyonAd = detay.PozisyonAD;
+            pz.DepartmanID = detay.DepartmanID;
+            db.SubmitChanges();
+        }
     }
 }

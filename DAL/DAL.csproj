@@ -58,6 +58,7 @@
     <Compile Include="DTO\MaasDTO.cs" />
     <Compile Include="DTO\PersonelDetay.cs" />
     <Compile Include="DTO\PersonelDTO.cs" />
+    <Compile Include="DTO\PozisyonDetayDTO.cs" />
     <Compile Include="DTO\PozisyonDTO.cs" />
     <Compile Include="DTO\UserStatic.cs" />
     <Compile Include="PersonelDataClasses.designer.cs">

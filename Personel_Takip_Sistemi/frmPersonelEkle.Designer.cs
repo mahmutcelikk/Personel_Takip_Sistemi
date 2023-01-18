@@ -34,7 +34,7 @@ namespace Personel_Takip_Sistemi
             this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
             this.lblSifre = new System.Windows.Forms.Label();
             this.txtSifre = new System.Windows.Forms.TextBox();
-            this.txtUserNoControl = new System.Windows.Forms.TextBox();
+            this.txtUserNo = new System.Windows.Forms.TextBox();
             this.lblUserNo = new System.Windows.Forms.Label();
             this.btnSec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace Personel_Takip_Sistemi
             this.panel1.Controls.Add(this.checkBoxAdmin);
             this.panel1.Controls.Add(this.lblSifre);
             this.panel1.Controls.Add(this.txtSifre);
-            this.panel1.Controls.Add(this.txtUserNoControl);
+            this.panel1.Controls.Add(this.txtUserNo);
             this.panel1.Controls.Add(this.lblUserNo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -116,15 +116,15 @@ namespace Personel_Takip_Sistemi
             this.txtSifre.TabIndex = 2;
             this.txtSifre.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // txtUserNoControl
+            // txtUserNo
             // 
-            this.txtUserNoControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUserNoControl.Location = new System.Drawing.Point(147, 22);
-            this.txtUserNoControl.Name = "txtUserNoControl";
-            this.txtUserNoControl.Size = new System.Drawing.Size(125, 30);
-            this.txtUserNoControl.TabIndex = 0;
-            this.txtUserNoControl.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtUserNoControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNoControl_KeyPress);
+            this.txtUserNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUserNo.Location = new System.Drawing.Point(147, 22);
+            this.txtUserNo.Name = "txtUserNo";
+            this.txtUserNo.Size = new System.Drawing.Size(125, 30);
+            this.txtUserNo.TabIndex = 0;
+            this.txtUserNo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUserNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserNoControl_KeyPress);
             // 
             // lblUserNo
             // 
@@ -376,7 +376,7 @@ namespace Personel_Takip_Sistemi
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblSifre;
         private System.Windows.Forms.TextBox txtSifre;
-        private System.Windows.Forms.TextBox txtUserNoControl;
+        private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label lblUserNo;
         private System.Windows.Forms.Button btnSec;
         private System.Windows.Forms.CheckBox checkBoxAdmin;

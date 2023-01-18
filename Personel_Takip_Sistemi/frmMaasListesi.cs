@@ -198,6 +198,7 @@ namespace Personel_Takip_Sistemi
             detay.MaasYil = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             detay.Ad = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             detay.Soyad = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detay.MaasMiktar = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
         }
 
         

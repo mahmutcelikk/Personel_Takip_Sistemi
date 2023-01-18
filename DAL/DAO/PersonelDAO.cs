@@ -73,6 +73,42 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static void PersonelGuncelle(PozisyonDetayDTO detay)
+        {
+            List<PERSONEL> list = db.PERSONELs.Where(x => x.PozisyonID == detay.ID).ToList();
+            foreach (var item in list)
+            {
+                item.DepartmanID = detay.DepartmanID;
+            }
+            db.SubmitChanges();
+        }
+
+        public static void PersonelGuncelle(PersonelDetay ps)
+        {
+            try
+            {
+                PERSONEL pr = db.PERSONELs.First(x=>x.ID == ps.PersonelID);
+                pr.UserNo = ps.UserNo;
+                pr.Ad = ps.Ad;
+                pr.Soyad = ps.Soyad;
+                pr.Password = ps.Sifre;
+                pr.PozisyonID = ps.PozisyonID;
+                pr.DepartmanID = ps.DepartmanID;
+                pr.Adres = ps.Adres;
+                pr.isAdmin = ps.isAdmin;
+                pr.Maas = ps.Maas;
+                pr.Resim = ps.Resim;
+                pr.DogumGunu = ps.DogumTarihi;
+                db.SubmitChanges();
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void PersonelMaasGuncelle(MaasDetayDTO maas)
         {
             try

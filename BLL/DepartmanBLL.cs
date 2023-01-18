@@ -20,5 +20,10 @@ namespace BLL
         {
             return DepartmanDAO.DepartmanGetir();
         }
+
+        public static void DepartmanGuncelle(DEPARTMAN dpt)
+        {
+            DepartmanDAO.DepartmanGuncelle(dpt);
+        }
     }
 }

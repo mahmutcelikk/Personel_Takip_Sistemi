@@ -32,17 +32,34 @@ namespace Personel_Takip_Sistemi
             }else
             {
                 DEPARTMAN dpt = new DEPARTMAN();
-                dpt.DepartmanAd = txtDepartmanAd.Text;
-                DepartmanBLL.DepartmanEkle(dpt);
-                MessageBox.Show("Departman Başarıyla Kaydedildi.");
-                txtDepartmanAd.Clear();
+                if (isUpdate)
+                {
+                    DialogResult result = MessageBox.Show("Güncellemeyi Onaylıyor Musunuz ?", "Dikkat !", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                        dpt.ID = detay.ID;
+                        dpt.DepartmanAd = txtDepartmanAd.Text;
+                        DepartmanBLL.DepartmanGuncelle(dpt);
+                        MessageBox.Show("Güncelleme Başarılı.");
+                        this.Close();
+                }
+                else
+                {
+                    dpt.DepartmanAd = txtDepartmanAd.Text;
+                    DepartmanBLL.DepartmanEkle(dpt);
+                    MessageBox.Show("Departman Başarıyla Kaydedildi.");
+                    txtDepartmanAd.Clear();
+                }
+                
             }
             
         }
 
+        public bool isUpdate = false;
+        public DEPARTMAN detay = new DEPARTMAN();
         private void frmDepartmanEkle_Load(object sender, EventArgs e)
         {
-
+            if (isUpdate)
+                txtDepartmanAd.Text = detay.DepartmanAd;
         }
     }
 }

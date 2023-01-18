@@ -111,6 +111,7 @@ namespace Personel_Takip_Sistemi
             txtAd.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSoyad.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtMaas.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+            maasMiktar = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
 
         }
 
@@ -132,6 +133,7 @@ namespace Personel_Takip_Sistemi
                     if(result == DialogResult.Yes)
                     {
                         MaasDetayDTO maas = new MaasDetayDTO();
+                        maas.PersonelID = detay.PersonelID;
                         maas.MaasID = detay.MaasID;
                         maas.MaasAyID = Convert.ToInt32(comboAylar.SelectedValue);
                         maas.MaasYil =  Convert.ToInt32(txtYil.Text);
@@ -147,11 +149,14 @@ namespace Personel_Takip_Sistemi
                     }
                 }
 
-                else { 
+                else {
+
+                    if (Convert.ToInt32(txtMaas.Text) > maasMiktar)
+                        control = true;
                 maas.Ay_ID = Convert.ToInt32(comboAylar.SelectedValue);
                 maas.Miktar = Convert.ToInt32(txtMaas.Text);
                 maas.YIL = Convert.ToInt32(txtYil.Text);
-                MaasBLL.MaasEkle(maas);
+                MaasBLL.MaasEkle(maas,control);
                 MessageBox.Show("Maaş Eklendi.");
                 txtMaas.Clear();
                 maas = new MAA();

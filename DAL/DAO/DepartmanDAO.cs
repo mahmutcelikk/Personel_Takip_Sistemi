@@ -36,5 +36,20 @@ namespace DAL.DAO
                 throw ex;
             }
         }
+
+        public static void DepartmanGuncelle(DEPARTMAN dpt)
+        {
+            try
+            {
+                DEPARTMAN dp = db.DEPARTMANs.First(x => x.ID == dpt.ID);
+                dp.DepartmanAd = dpt.DepartmanAd;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
