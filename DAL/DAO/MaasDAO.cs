@@ -70,6 +70,21 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static void MaasSil(int maasID)
+        {
+            try
+            {
+                MAA maas = db.MAAs.First(x => x.ID == maasID);
+                db.MAAs.DeleteOnSubmit(maas);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void MaasGuncelle(MaasDetayDTO maas)
         {
             try

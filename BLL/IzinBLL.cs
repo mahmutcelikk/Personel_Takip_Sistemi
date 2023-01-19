@@ -35,5 +35,10 @@ namespace BLL
         {
             IzinDAO.IzinGuncellemesii(izinID,onayla);
         }
+
+        public static void IzinSil(int izinID)
+        {
+            IzinDAO.IzinSil(izinID);
+        }
     }
 }

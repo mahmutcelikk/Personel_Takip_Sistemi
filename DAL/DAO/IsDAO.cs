@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace DAL.DAO
 {
@@ -80,6 +81,21 @@ namespace DAL.DAO
             }
             return liste;   
 
+        }
+
+        public static void IsSil(int isID)
+        {
+            try
+            {
+                I i = db.Is.First(x => x.ID == isID);
+                db.Is.DeleteOnSubmit(i);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public static void IsGuncell(IsDetayDTO dto)

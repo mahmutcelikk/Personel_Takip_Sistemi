@@ -73,6 +73,22 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static void PersonelSil(int personelID)
+        {
+            try
+            {
+                
+                PERSONEL per = db.PERSONELs.First(x => x.ID == personelID);
+                db.PERSONELs.DeleteOnSubmit(per);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void PersonelGuncelle(PozisyonDetayDTO detay)
         {
             List<PERSONEL> list = db.PERSONELs.Where(x => x.PozisyonID == detay.ID).ToList();

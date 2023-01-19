@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DAL.DTO;
 using DAL.DAO;
 using BLL;
+using System.IO;
 
 namespace Personel_Takip_Sistemi
 {
@@ -173,6 +174,22 @@ namespace Personel_Takip_Sistemi
             detay.DogumTarihi =Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString());
 
 
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Personel Silinsin mi ?", "Dikkat !", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                PersonelBLL.PersonelSil(detay.PersonelID);
+                string resimYol = Application.StartupPath + "\\resimler\\" + detay.Resim;
+                File.Delete(resimYol);
+                MessageBox.Show("Personel Silindi");
+                comboFull = false;
+                Temizle();
+                Doldur();
+                
+            }
         }
     }
 }

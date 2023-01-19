@@ -31,5 +31,10 @@ namespace BLL
         {
             IsDAO.IsGuncell(dto);
         }
+
+        public static void IsSil(int isID)
+        {
+            IsDAO.IsSil(isID);
+        }
     }
 }

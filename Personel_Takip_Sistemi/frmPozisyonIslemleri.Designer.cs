@@ -73,6 +73,7 @@ namespace Personel_Takip_Sistemi
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -104,6 +105,7 @@ namespace Personel_Takip_Sistemi
             this.dataGridPozisyon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPozisyon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridPozisyon.Location = new System.Drawing.Point(0, 0);
+            this.dataGridPozisyon.MultiSelect = false;
             this.dataGridPozisyon.Name = "dataGridPozisyon";
             this.dataGridPozisyon.RowHeadersWidth = 51;
             this.dataGridPozisyon.RowTemplate.Height = 24;

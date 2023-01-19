@@ -69,5 +69,21 @@ namespace Personel_Takip_Sistemi
             detay.EskiDepartmanID = Convert.ToInt32(dataGridPozisyon.Rows[e.RowIndex].Cells[3].Value);
             detay.PozisyonAD = dataGridPozisyon.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Pozisyon silinsin mi ?", "Dikkat!", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                PozisyonBLL.PozisyonSil(detay.ID);
+                MessageBox.Show("Silindi");
+                liste = PozisyonBLL.PozisyonGetir();
+                dataGridPozisyon.DataSource = liste;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
     }
 }

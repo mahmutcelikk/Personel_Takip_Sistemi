@@ -175,5 +175,28 @@ namespace Personel_Takip_Sistemi
      
 
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Silmeyi Onaylıyor Musunuz?", "Dikkat !", MessageBoxButtons.YesNo);
+            if(result==DialogResult.Yes)
+            {
+                IsBLL.IsSil(detay.IsID);
+                MessageBox.Show("İş Silindi.");
+                comboFull = false;
+                Doldur();
+                Temizle();
+            }
+            else
+            {
+                this.Close();
+
+            }
+        }
+
+        private void btnOnay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

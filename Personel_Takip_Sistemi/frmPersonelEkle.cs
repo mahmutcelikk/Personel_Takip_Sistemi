@@ -99,6 +99,18 @@ namespace Personel_Takip_Sistemi
                 txtResim.Text = resim2;
                 pictureBox1.Load(resim2);
 
+                if (!UserStatic.IsAdmin)
+                {
+                    txtAd.Enabled = false;
+                    txtSoyad.Enabled = false;
+                    txtMaas.Enabled = false;
+                    txtResim.Enabled = false;
+                    txtUserNo.Enabled = false;
+                    checkBoxAdmin.Enabled = false;
+                    comboDepartman.Enabled= false;
+                    comboPozisyon.Enabled = false;
+                }
+
 
             }
 

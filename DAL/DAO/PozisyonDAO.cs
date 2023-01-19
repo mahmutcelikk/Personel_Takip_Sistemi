@@ -59,6 +59,21 @@ namespace DAL.DAO
             }
         }
 
+        public static void PozisyonSil(int id)
+        {
+            try
+            {
+                POZİSYON poz = db.POZİSYONs.First(x => x.ID == id);
+                db.POZİSYONs.DeleteOnSubmit(poz);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void PozisyonGuncelle(PozisyonDetayDTO detay)
         {
             POZİSYON pz = db.POZİSYONs.First(x => x.ID == detay.ID);

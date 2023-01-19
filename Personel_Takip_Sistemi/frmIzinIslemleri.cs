@@ -179,10 +179,12 @@ namespace Personel_Takip_Sistemi
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             detay.IzinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detay.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
             detay.BaslamaTarihi = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             detay.BitisTarihi = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
             detay.Sure = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
             detay.Aciklama = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            detay.IzinDurumID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -215,6 +217,25 @@ namespace Personel_Takip_Sistemi
                 Temizle();
                 Doldur();
 
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Silmeyi onaylıyor musunuz ?", "Dikkat !", MessageBoxButtons.YesNo);
+            if(result==DialogResult.Yes)
+            {
+                if (detay.IzinDurumID == ComboStatic.Onayla || detay.IzinDurumID == ComboStatic.Reddedildi)
+                    MessageBox.Show("Onaylı ya da reddedilmiş izinleri silemezsiniz.");
+                else
+                {
+                    IzinBLL.IzinSil(detay.IzinID);
+                    MessageBox.Show("İzin silindi.");
+                    comboFull = false;
+                    Doldur();
+                    Temizle();
+
+                }
             }
         }
     }

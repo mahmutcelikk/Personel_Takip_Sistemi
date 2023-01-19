@@ -25,5 +25,10 @@ namespace BLL
         {
             DepartmanDAO.DepartmanGuncelle(dpt);
         }
+
+        public static void DepartmanSil(int id)
+        {
+            DepartmanDAO.DepartmanSil(id);
+        }
     }
 }

@@ -75,6 +75,21 @@ namespace DAL.DAO
             return liste;
         }
 
+        public static void IzinSil(int izinID)
+        {
+            try
+            {
+                IZIN iz = db.IZINs.First(x => x.ID == izinID);
+                db.IZINs.DeleteOnSubmit(iz);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static void IzinGuncellemesii(int izinID, int onayla)
         {
             try

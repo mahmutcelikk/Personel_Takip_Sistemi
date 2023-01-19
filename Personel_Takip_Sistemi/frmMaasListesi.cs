@@ -201,6 +201,18 @@ namespace Personel_Takip_Sistemi
             detay.MaasMiktar = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
         }
 
-        
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Silmeyi onaylıyor musunuz?", "Dikkat !", MessageBoxButtons.YesNo);
+            if(result==DialogResult.Yes)
+            {
+                MaasBLL.MaasSil(detay.MaasID);
+                MessageBox.Show("Silindi.");
+                Temizle();
+                comboFull = false;
+                Doldur();
+
+            }
+        }
     }
 }
